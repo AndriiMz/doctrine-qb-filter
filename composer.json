@@ -1,0 +1,22 @@
+{
+    "type": "symfony-bundle",
+    "name": "AndriiMz/doctrine-qb-filter",
+    "license": "proprietary",
+    "autoload": {
+        "psr-4": {
+            "AndriiMz\\QbFilter\\": "src/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "require": {
+        "php": "^7.1",
+        "doctrine/orm": "^2.7",
+        "symfony/config": "^4.1|^5.*",
+        "symfony/dependency-injection": "^4.1|^5.*",
+        "symfony/http-kernel": "^4.1|^5.*",
+        "symfony/property-info": "^4.1|^5.*"
+    },
+    "description": "Doctrine query builder filter without repositories."
+}
