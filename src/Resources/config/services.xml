@@ -2,8 +2,17 @@
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
         <defaults public="false" />
+        <defaults autowire="true" />
+        <defaults autoconfigure="true" />
 
-        <service class="AndriiMz\QbFilter\Service\QueryBuilderFilterStrategy" />
-        <service class="AndriiMz\QbFilter\Service\QueryFilter" />
+        <service id="AndriiMz\QbFilter\Service\QueryBuilderFilterStrategy"
+                 class="AndriiMz\QbFilter\Service\QueryBuilderFilterStrategy" />
+        <service id="AndriiMz\QbFilter\Service\QueryFilter"
+                 class="AndriiMz\QbFilter\Service\QueryFilter"
+                 public="true">
+            <argument type="service" id="Doctrine\ORM\EntityManagerInterface" />
+            <argument type="service" id="AndriiMz\QbFilter\Service\QueryBuilderFilterStrategy" />
+            <argument type="service" id="Symfony\Component\PropertyInfo\PropertyTypeExtractorInterface" />
+        </service>
     </services>
 </container>
