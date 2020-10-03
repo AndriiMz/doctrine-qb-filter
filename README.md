@@ -22,6 +22,6 @@ If you need to extract users with task you can write simple lines instead of bui
 ```
     $filter = new FilterRequest();
     $filter->filter['task']['is_not_null'] = true;
-    $result = $queryFilter->getResults(User::class);
+    $result = $queryFilter->getResults(User::class, $filter);
     $users = $result->items;
 ```
